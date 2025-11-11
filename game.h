@@ -1,4 +1,4 @@
-#pragma
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -13,7 +13,7 @@ public:
     virtual int getAttack() const = 0;
     virtual int getSpeed() const = 0;
     virtual int getDefense() const = 0;
-    virtual ~Character() {}
+    virtual ~Character() { }
 };
 
 class Knight : public Character {
@@ -27,7 +27,7 @@ public:
 class Wizard : public Character {
 public:
     Wizard() { description = "Wizard"; }
-    int getAttack() const override; 
+    int getAttack() const override;
     int getSpeed() const override;
     int getDefense() const override;
 };
@@ -35,9 +35,9 @@ public:
 class Archer : public Character {
 public:
     Archer() { description = "Archer"; }
-    int getAttack() const override; 
-    int getSpeed() const override; 
-    int getDefense() const override; 
+    int getAttack() const override;
+    int getSpeed() const override;
+    int getDefense() const override;
 };
 
 class equip_testmentDecorator : public Character {
@@ -46,49 +46,50 @@ protected:
 public:
     equip_testmentDecorator(Character* c) : character(c) {}
     virtual ~equip_testmentDecorator() { delete character; }
+    virtual ~equip_testmentDecorator() { }
 };
 
 class Armor : public equip_testmentDecorator {
 public:
     Armor(Character* c) : equip_testmentDecorator(c) {}
-    string getDescription() const override; 
-    int getAttack() const override; 
-    int getSpeed() const override; 
-    int getDefense() const override; 
+    string getDescription() const override;
+    int getAttack() const override;
+    int getSpeed() const override;
+    int getDefense() const override;
 };
 
 class Boots : public equip_testmentDecorator {
 public:
     Boots(Character* c) : equip_testmentDecorator(c) {}
-    string getDescription() const override; 
-    int getAttack() const override; 
-    int getSpeed() const override; 
-    int getDefense() const override; 
+    string getDescription() const override;
+    int getAttack() const override;
+    int getSpeed() const override;
+    int getDefense() const override;
 };
 
 class Staff : public equip_testmentDecorator {
 public:
     Staff(Character* c) : equip_testmentDecorator(c) {}
-    string getDescription() const override; 
-    int getAttack() const override; 
-    int getSpeed() const override; 
-    int getDefense() const override; 
+    string getDescription() const override;
+    int getAttack() const override;
+    int getSpeed() const override;
+    int getDefense() const override;
 };
 
 class Sword : public equip_testmentDecorator {
 public:
     Sword(Character* c) : equip_testmentDecorator(c) {}
-    string getDescription() const override; 
-    int getAttack() const override; 
-    int getSpeed() const override; 
-    int getDefense() const override; 
+    string getDescription() const override;
+    int getAttack() const override;
+    int getSpeed() const override;
+    int getDefense() const override;
 };
 
 class Bow : public equip_testmentDecorator {
 public:
     Bow(Character* c) : equip_testmentDecorator(c) { }
-    string getDescription() const override; 
-    int getAttack() const override; 
-    int getSpeed() const override; 
-    int getDefense() const override; 
+    string getDescription() const override;
+    int getAttack() const override;
+    int getSpeed() const override;
+    int getDefense() const override;
 };
