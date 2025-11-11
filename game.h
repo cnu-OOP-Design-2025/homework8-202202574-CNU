@@ -46,7 +46,6 @@ protected:
 public:
     equip_testmentDecorator(Character* c) : character(c) {}
     virtual ~equip_testmentDecorator() { delete character; }
-    virtual ~equip_testmentDecorator() { }
 };
 
 class Armor : public equip_testmentDecorator {
